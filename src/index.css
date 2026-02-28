@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+    --neon-blue: #00d4ff;
+    --neon-blue-dark: #0099ff;
+    --dark-bg: #000000;
+}
+
+body {
+    min-height: 100vh;
+    background: #000000;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+.cyber-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 212, 255, 0.08) 0%, transparent 50%), #000000;
+    pointer-events: none; z-index: 0;
+}
+
+.grid-lines {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px; pointer-events: none; z-index: 0;
+}
+
+.header-container { position: relative; padding: 60px 0 40px; }
+.glow-title {
+    font-family: 'Orbitron', sans-serif; font-size: clamp(3rem, 10vw, 7rem); font-weight: 900;
+    text-transform: uppercase; color: #fff; text-shadow: 0 0 14px rgba(0, 212, 255, 0.35);
+}
+.subtitle { font-family: 'Orbitron', sans-serif; color: rgba(0, 212, 255, 0.8); font-size: 1.1rem; letter-spacing: 0.5em; margin-top: 15px; }
+
+.card-container { position: relative; perspective: 2000px; display: flex; justify-content: center; }
+.gift-card {
+    position: relative; width: min(100%, 240px); aspect-ratio: 5 / 8; border-radius: 24px;
+    cursor: pointer; transform-style: preserve-3d; transition: all 0.5s;
+}
+
+.card-inner {
+    position: relative; width: 100%; height: 100%;
+    background: linear-gradient(145deg, rgba(10,10,10,0.9) 0%, rgba(0,0,0,0.98) 100%);
+    backdrop-filter: blur(30px); border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.15);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 16px; z-index: 2;
+}
+
+.card-logo-container { width: 78px; height: 78px; display: flex; align-items: center; justify-content: center; transform: translateZ(20px); }
+.card-logo { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.4)); z-index: 2; }
+.card-title { font-family: 'Orbitron', sans-serif; color: #fff; font-size: 0.95rem; font-weight: 700; margin-top: 14px; transform: translateZ(15px); text-align: center; }
+.card-value { font-family: 'Orbitron', sans-serif; color: var(--neon-blue); font-size: 1.15rem; font-weight: 800; margin-top: 4px; transform: translateZ(18px); text-align: center; }
+.card-delivery-text { font-family: 'Orbitron', sans-serif; color: rgba(255, 255, 255, 0.82); font-size: 0.72rem; margin-top: 8px; transform: translateZ(14px); text-align: center; }
+
+.themed-card .card-inner { border-color: rgba(255, 255, 255, 0.35); box-shadow: inset 0 0 45px rgba(0, 0, 0, 0.25); }
+.themed-top-label { position: absolute; top: 16px; left: 16px; font-family: 'Orbitron', sans-serif; font-size: 0.58rem; font-weight: 700; color: #fff; transform: translateZ(18px); }
+.themed-bottom-label { font-family: 'Orbitron', sans-serif; font-size: 0.56rem; color: #fff; margin-top: 6px; transform: translateZ(15px); text-align: center; }
+
+.theme-roblox .card-inner { background: linear-gradient(160deg, #333333 0%, #000000 100%); }
+.theme-fortnite .card-inner { background: linear-gradient(160deg, #8a2be2 0%, #2a004a 100%); }
+.theme-xbox .card-inner { background: linear-gradient(160deg, #1f8f23 0%, #0d6f11 100%); }
+.theme-googleplay .card-inner { background: linear-gradient(160deg, #00c853 0%, #ff1744 100%); }
+.theme-playstation .card-inner { background: linear-gradient(160deg, #003791 0%, #001133 100%); }
+.theme-amazon .card-inner { background: linear-gradient(160deg, #232f3e 0%, #000000 100%); }
+.theme-apple .card-inner { background: linear-gradient(160deg, #555555 0%, #111111 100%); }
+.theme-spotify .card-inner { background: linear-gradient(160deg, #1db954 0%, #0a5c26 100%); }
+.theme-steam .card-inner { background: linear-gradient(160deg, #171a21 0%, #000000 100%); }
+.theme-psplus .card-inner { background: linear-gradient(160deg, #fbc02d 0%, #bc5100 100%); }
+.theme-discord .card-inner { background: linear-gradient(160deg, #5865f2 0%, #363f96 100%); }
+.theme-twitch .card-inner { background: linear-gradient(160deg, #9146ff 0%, #4b307a 100%); }
+.theme-netflix .card-inner { background: linear-gradient(160deg, #e50914 0%, #80050b 100%); }
+.theme-paypal .card-inner { background: linear-gradient(160deg, #003087 0%, #000a22 100%); }
+.theme-nike .card-inner { background: linear-gradient(160deg, #ff6600 0%, #993d00 100%); }
+.theme-uber .card-inner { background: linear-gradient(160deg, #000000 0%, #222222 100%); }
+.theme-mcdonalds .card-inner { background: linear-gradient(160deg, #da291c 0%, #75100a 100%); }
+.theme-hbonow .card-inner { background: linear-gradient(160deg, #31006f 0%, #13002b 100%); }
+.theme-ebay .card-inner { background: linear-gradient(160deg, #e53238 0%, #f5af02 100%); }
+
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(20px); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+.modal-overlay.active { display: flex; }
+.modal-content { position: relative; width: 100%; max-width: 520px; background: linear-gradient(145deg, #080808 0%, #000000 100%); border-radius: 30px; padding: 50px 40px; border: 2px solid rgba(0, 212, 255, 0.3); }
+.modal-close { position: absolute; top: 20px; right: 25px; background: none; border: 2px solid rgba(0, 212, 255, 0.3); color: var(--neon-blue); width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.modal-title { font-family: 'Orbitron', sans-serif; color: #fff; font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 35px; }
+
+.progress-container { margin: 35px 0; }
+.progress-label { font-family: 'Orbitron', sans-serif; color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; margin-bottom: 12px; display: flex; justify-content: space-between; }
+.progress-bar { width: 100%; height: 12px; background: rgba(255, 255, 255, 0.05); border-radius: 20px; border: 1px solid rgba(0, 212, 255, 0.2); }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--neon-blue-dark), var(--neon-blue)); border-radius: 20px; transition: width 0.4s; }
+.status-text { font-family: 'Rajdhani', sans-serif; color: var(--neon-blue); text-align: center; font-size: 1rem; margin-top: 18px; }
+
+.code-display { display: none; text-align: center; margin-top: 35px; }
+.code-display.active { display: block; }
+.code-label { font-family: 'Rajdhani', sans-serif; color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-bottom: 18px; }
+.gift-code { font-family: 'Orbitron', monospace; font-size: 1.8rem; font-weight: 700; color: #fff; background: rgba(0, 212, 255, 0.08); border: 2px solid rgba(0, 212, 255, 0.4); padding: 18px 30px; border-radius: 15px; display: inline-block; }
+
+.verify-btn { display: none; width: 100%; padding: 20px; margin-top: 30px; background: linear-gradient(135deg, var(--neon-blue), var(--neon-blue-dark)); border: none; border-radius: 15px; color: #000; font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; }
+.verify-btn.active { display: block; }
+
+.particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.particle { position: absolute; width: 3px; height: 3px; background: var(--neon-blue); border-radius: 50%; opacity: 0.3; }
+
+.footer { text-align: center; padding: 40px 0; color: rgba(255, 255, 255, 0.3); font-size: 0.85rem; }
+.footer span { color: var(--neon-blue); }
